@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild, HostListener } from '@angular/core';
 import * as THREE from 'three';
-import "./js/OrbitControls";
-import "./js/ColladaLoader";
+import "./js/EnableThreeExamples";
+import "three/examples/js/controls/OrbitControls";
+import "three/examples/js/loaders/ColladaLoader";
 
 @Component({
     selector: 'scene',

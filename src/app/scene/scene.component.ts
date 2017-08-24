@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild, HostListener } from '@angular/core';
 import * as THREE from 'three';
+import "./js/OrbitControls";
+import "./js/ColladaLoader";
 
 @Component({
     selector: 'scene',
@@ -17,11 +19,14 @@ export class SceneComponent implements AfterViewInit {
     public nearClippingPane: number = 1;
     public farClippingPane: number = 1100;
 
+    public controls: THREE.OrbitControls;
+
     @ViewChild('canvas')
     private canvasRef: ElementRef;
 
     constructor() {
-
+        this.render = this.render.bind(this);
+        this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
     }
 
     private get canvas(): HTMLCanvasElement {
@@ -31,6 +36,14 @@ export class SceneComponent implements AfterViewInit {
     private createScene() {
         this.scene = new THREE.Scene();
         this.scene.add(new THREE.AxisHelper(200));
+        var loader = new THREE.ColladaLoader();
+        loader.load('assets/model/multimaterial.dae', this.onModelLoadingCompleted);
+    }
+
+    private onModelLoadingCompleted(collada) {
+        var modelScene = collada.scene;
+        this.scene.add(modelScene);
+        this.render();
     }
 
     private createLight() {
@@ -53,8 +66,8 @@ export class SceneComponent implements AfterViewInit {
         );
 
         // Set position and look at
-        this.camera.position.x = 0;
-        this.camera.position.y = 0;
+        this.camera.position.x = 10;
+        this.camera.position.y = 10;
         this.camera.position.z = 100;
     }
 
@@ -89,6 +102,14 @@ export class SceneComponent implements AfterViewInit {
 
     public render() {
         this.renderer.render(this.scene, this.camera);
+    }
+
+    public addControls() {
+        this.controls = new THREE.OrbitControls(this.camera);
+        this.controls.rotateSpeed = 1.0;
+        this.controls.zoomSpeed = 1.2;
+        this.controls.addEventListener('change', this.render);
+
     }
 
     /* EVENTS */
@@ -126,6 +147,7 @@ export class SceneComponent implements AfterViewInit {
         this.createLight();
         this.createCamera();
         this.startRendering();
+        this.addControls();
     }
 
 }

@@ -249,6 +249,30 @@ var SceneComponent = (function () {
     SceneComponent.prototype.onMouseDown = function (event) {
         console.log("onMouseDown");
         event.preventDefault();
+        // Example of mesh selection/pick:
+        var raycaster = new __WEBPACK_IMPORTED_MODULE_1_three__["Raycaster"]();
+        var mouse = new __WEBPACK_IMPORTED_MODULE_1_three__["Vector2"]();
+        mouse.x = (event.clientX / this.renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y = -(event.clientY / this.renderer.domElement.clientHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, this.camera);
+        var obj = [];
+        this.findAllObjects(obj, this.scene);
+        var intersects = raycaster.intersectObjects(obj);
+        console.log("Scene has " + obj.length + " objects");
+        console.log(intersects.length + " intersected objects found");
+        intersects.forEach(function (i) {
+            console.log(i.object); // do what you want to do with object
+        });
+    };
+    SceneComponent.prototype.findAllObjects = function (pred, parent) {
+        var _this = this;
+        // NOTE: Better to keep separate array of selected objects
+        if (parent.children.length > 0) {
+            parent.children.forEach(function (i) {
+                pred.push(i);
+                _this.findAllObjects(pred, i);
+            });
+        }
     };
     SceneComponent.prototype.onMouseUp = function (event) {
         console.log("onMouseUp");

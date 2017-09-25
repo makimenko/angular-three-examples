@@ -118,6 +118,33 @@ export class SceneComponent implements AfterViewInit {
     public onMouseDown(event: MouseEvent) {
         console.log("onMouseDown");
         event.preventDefault();
+
+        // Example of mesh selection/pick:
+        var raycaster = new THREE.Raycaster();
+        var mouse = new THREE.Vector2();
+        mouse.x = (event.clientX / this.renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y = - (event.clientY / this.renderer.domElement.clientHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, this.camera);
+
+        var obj: THREE.Object3D[] = [];
+        this.findAllObjects(obj, this.scene);
+        var intersects = raycaster.intersectObjects(obj);
+        console.log("Scene has " + obj.length + " objects");
+        console.log(intersects.length + " intersected objects found")
+        intersects.forEach((i) => {
+            console.log(i.object); // do what you want to do with object
+        });
+
+    }
+
+    private findAllObjects(pred: THREE.Object3D[], parent: THREE.Object3D) {
+        // NOTE: Better to keep separate array of selected objects
+        if (parent.children.length > 0) {
+            parent.children.forEach((i) => {
+                pred.push(i);
+                this.findAllObjects(pred, i);                
+            });
+        }
     }
 
     public onMouseUp(event: MouseEvent) {

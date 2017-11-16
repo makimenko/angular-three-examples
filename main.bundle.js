@@ -1,15 +1,19 @@
-webpackJsonp([1],{
+webpackJsonp(["main"],{
 
-/***/ "../../../../../src async recursive":
+/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "../../../../../src async recursive";
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
@@ -42,8 +46,8 @@ module.exports = "<scene></scene>"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -55,17 +59,17 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app';
     }
+    AppComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'app-root',
+            template: __webpack_require__("../../../../../src/app/app.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
-        selector: 'app-root',
-        template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-    })
-], AppComponent);
 
-//# sourceMappingURL=app.component.js.map
+
 
 /***/ }),
 
@@ -73,11 +77,11 @@ AppComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scene_scene_component__ = __webpack_require__("../../../../../src/app/scene/scene.component.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,23 +95,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_3__scene_scene_component__["a" /* SceneComponent */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */]
+            ],
+            providers: [],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__scene_scene_component__["a" /* SceneComponent */]
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */]
-        ],
-        providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
-    })
-], AppModule);
 
-//# sourceMappingURL=app.module.js.map
+
 
 /***/ }),
 
@@ -147,7 +151,8 @@ module.exports = "<canvas #canvas (mousedown)=\"onMouseDown($event)\" (mouseup)=
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SceneComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_three__ = __webpack_require__("../../../../three/build/three.module.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_EnableThreeExamples__ = __webpack_require__("../../../../../src/app/scene/js/EnableThreeExamples.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_EnableThreeExamples___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__js_EnableThreeExamples__);
@@ -155,7 +160,6 @@ module.exports = "<canvas #canvas (mousedown)=\"onMouseDown($event)\" (mouseup)=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_three_examples_js_controls_OrbitControls___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_three_examples_js_controls_OrbitControls__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_three_examples_js_loaders_ColladaLoader__ = __webpack_require__("../../../../three/examples/js/loaders/ColladaLoader.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_three_examples_js_loaders_ColladaLoader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_three_examples_js_loaders_ColladaLoader__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SceneComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -297,35 +301,34 @@ var SceneComponent = (function () {
         this.startRendering();
         this.addControls();
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* ViewChild */])('canvas'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ElementRef */])
+    ], SceneComponent.prototype, "canvasRef", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* HostListener */])('window:resize', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Event]),
+        __metadata("design:returntype", void 0)
+    ], SceneComponent.prototype, "onResize", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* HostListener */])('document:keypress', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [KeyboardEvent]),
+        __metadata("design:returntype", void 0)
+    ], SceneComponent.prototype, "onKeyPress", null);
+    SceneComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'scene',
+            template: __webpack_require__("../../../../../src/app/scene/scene.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/scene/scene.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SceneComponent);
     return SceneComponent;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* ViewChild */])('canvas'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
-], SceneComponent.prototype, "canvasRef", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* HostListener */])('window:resize', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], SceneComponent.prototype, "onResize", null);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* HostListener */])('document:keypress', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], SceneComponent.prototype, "onKeyPress", null);
-SceneComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
-        selector: 'scene',
-        template: __webpack_require__("../../../../../src/app/scene/scene.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/scene/scene.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], SceneComponent);
 
-var _a;
-//# sourceMappingURL=scene.component.js.map
+
 
 /***/ }),
 
@@ -334,15 +337,10 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false
+    production: true
 };
-//# sourceMappingURL=environment.js.map
+
 
 /***/ }),
 
@@ -351,8 +349,8 @@ var environment = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
@@ -360,10 +358,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* enableProdMode */])();
 }
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
+
 
 /***/ }),
 

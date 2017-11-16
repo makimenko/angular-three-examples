@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp(["styles"],{
 
 /***/ "../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
@@ -15,8 +15,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--7-1!../node_modules/postcss-loader/index.js??postcss!./styles.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--7-1!../node_modules/postcss-loader/index.js??postcss!./styles.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
 
 // exports
 

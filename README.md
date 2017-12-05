@@ -11,3 +11,7 @@ cd angular-three-examples
 npm install
 ng serve
 ```
+
+## Angular4
+Previous version of Angular4 see in tag: [ng4](https://github.com/makimenko/angular-three-examples/tree/ng4)
+ 

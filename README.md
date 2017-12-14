@@ -1,5 +1,7 @@
 # AngularThreeExamples
-[Angular5](https://angular.io) + [three.js](https://github.com/mrdoob/three.js) + Three.js examples/js (ColladaLoader and OrbitControls)
+[Angular5](https://angular.io) + [three.js](https://github.com/mrdoob/three.js) + Three.js examples/js (ColladaLoader and OrbitControls)  
+
+NOTE: Active development of templates switched to [angular-template-for-dummies](https://github.com/makimenko/angular-template-for-dummies) repository
 
 ## Demo
 See [DEMO](https://makimenko.github.io/angular-three-examples)

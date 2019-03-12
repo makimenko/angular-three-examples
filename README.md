@@ -12,8 +12,8 @@ npm install
 ng serve
 ```
 
-## Angular 6
-Development switched to [angular-template-for-dummies](https://github.com/makimenko/angular-template-for-dummies/tree/threejs) repository.
+## Angular 7
+Development switched to [angular-template-for-threejs](https://github.com/makimenko/angular-template-for-threejs) repository.
  
 ## Angular 4
 Previous version of Angular4 see in tag: [ng4](https://github.com/makimenko/angular-three-examples/tree/ng4)
